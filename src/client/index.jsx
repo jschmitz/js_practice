@@ -15,6 +15,7 @@ import Tether from 'tether'
 import App from './app'
 import helloReducer from './reducer/hello'
 import navigationReducer from './reducer/navigation'
+import infoReducer from './reducer/info'
 import { APP_CONTAINER_SELECTOR } from '../shared/config'
 import { isProd } from '../shared/util'
 
@@ -26,7 +27,10 @@ require('bootstrap')
 const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
 
 
-const store = createStore(combineReducers({ hello: helloReducer, nav: navigationReducer }),
+const store = createStore(combineReducers(
+  { hello: helloReducer,
+    nav: navigationReducer,
+    details: infoReducer }),
   composeEnhancers(applyMiddleware(thunkMiddleware)))
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR)

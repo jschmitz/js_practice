@@ -4,6 +4,7 @@ import React from 'react'
 
 import ModalExample from '../modal-example'
 import { APP_NAME } from '../../../shared/config'
+import Details from '../../container/details'
 
 const HomePage = () =>
   <div>
@@ -12,6 +13,7 @@ const HomePage = () =>
         <h1 className="display-3 mb-4">{APP_NAME}</h1>
       </div>
     </div>
+    <Details />
     <div className="container">
       <div className="row">
         <div className="col-md-4 mb-4">
